@@ -9,12 +9,12 @@ Examine the project directories and report what exists across each area of the p
 For each slice listed in `CLAUDE.md` (the "Current feature slices" table), look at three places. A slice may not have every subfolder — only `actions/` is common; `hooks/`, `api/`, `utils/`, and `types.ts` are added as needed.
 
 For every slice in the table, check:
-- **Routes** — under `app/(features)/<slice>/**/page.tsx` (or whichever route group the slice uses).
+- **Routes** — under the slice's route group. The default is `app/(features)/<slice>/**/page.tsx`, but a slice may live in a bespoke route group such as `app/(admin)/<slice>/`, `app/(portal)/<slice>/`, or its own top-level group. Read the route path column from the CLAUDE.md slice table — don't assume `(features)/`.
 - **Slice logic** — under `features/<slice>/`.
 - **Shared UI used by this area** — components in `components/` whose Storybook `title` references the slice's PascalCase name, or which are imported by the slice's routes.
 
 Also scan once across the whole project:
-- **Shared design components** — every `.tsx` file under `components/atoms/`, `components/molecules/`, `components/organisms/` (and any legacy file still sitting flat in `components/`) and whether each has a co-located `.stories.tsx`. Components in `components/ui/` are auto-generated shadcn primitives — count them but don't audit them for stories.
+- **Shared design components** — every `.tsx` file under `components/atoms/`, `components/molecules/`, `components/organisms/`, plus any themed sub-groupings (e.g. `components/charts/`, `components/<theme>/`), and whether each has a co-located `.stories.tsx`. Components in `components/ui/` are auto-generated shadcn primitives — count them but don't audit them for stories. Any legacy file still sitting flat in `components/` should be flagged for migration.
 - **Mock data** — every factory file in `lib/mocks/` (and whether it is re-exported from `lib/mocks/index.ts`).
 
 > Note: this project does **not** use a `features/<slice>/components/` folder. All UI components live under the atomic subfolders of the top-level `components/` folder regardless of which area they serve. Do not look for components inside `features/`.

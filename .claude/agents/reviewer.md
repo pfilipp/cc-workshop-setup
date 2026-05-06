@@ -31,7 +31,7 @@ Read the project-root `CLAUDE.md` first, then scan the relevant files. Run throu
 
 ### 3. Mock data quality
 - Factory functions in `lib/mocks/` return realistic data for your domain — proper names, identifiers, plausible dates. Exactly what counts as "realistic" depends on your domain (see `CLAUDE.md` and `agents/guide.md`).
-- No placeholder names like "Test User 1", "123 Test Street", or "AAAA 1AA".
+- No obviously fake placeholders like "Test User 1", "123 Test Street", "ID-0000", or "user@example.com".
 - Factories are typed against the domain interfaces in `types/`.
 - All factories are re-exported from `lib/mocks/index.ts`.
 

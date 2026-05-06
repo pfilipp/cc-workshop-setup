@@ -34,7 +34,7 @@ Ask the user two things (skip any already answered via `$ARGUMENTS`):
 
 All mock data must:
 - Use realistic values for your domain — proper-looking names, identifiers, addresses, plausible dates. The exact shape of "realistic" depends on the domain (see `agents/guide.md`).
-- Never use placeholders like "Test User 1", "123 Test Street", or "AAAA 1AA"
+- Never use obviously fake placeholders like "Test User 1", "123 Test Street", "ID-0000", or "user@example.com"
 - Be typed against the domain interfaces in `types/`
 
 ## Step 4: Summarise what was created

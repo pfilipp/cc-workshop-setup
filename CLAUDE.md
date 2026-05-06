@@ -33,7 +33,7 @@ This is a **proof-of-concept** repository. Favour clarity and speed over prematu
 
 | Layer | Choice | Notes |
 |---|---|---|
-| Framework | **Next.js** (App Router) | Pages Router is not used in this project |
+| Framework | **Next.js** (App Router) | Pages Router is not used in this project. Bundled docs live in `node_modules/next/dist/docs/` — consult them before using unfamiliar APIs |
 | Language | **TypeScript** (strict mode) | `tsconfig.json` has `"strict": true` — do not relax this |
 | Styling | **Tailwind CSS v4** | Utility classes only; design tokens defined via `@theme` blocks in `app/globals.css` (no `tailwind.config.ts` — v4 uses CSS-based config) |
 | Components | **shadcn/ui** | Pre-built accessible primitives; installed into `components/ui/` |
@@ -242,6 +242,7 @@ Rules:
 3. **Pick the level by what the component contains, not by where it is used.** A "billing dashboard card" composed of a header, a value, and a list is an organism even though it is only used in one place. A "yes/no toggle with helper text" is a molecule even if only one form uses it.
 4. **There is no slice-local component layer.** Components live in atomic subfolders regardless of which feature area they serve. Use the Storybook `title` to group by feature area for browsing.
 5. **Page views** (`app/(features)/<slice>/page.tsx`, plus their `*-client.tsx` siblings) are the only UI artifacts that do not belong in `components/`.
+6. **Themed sub-groupings are allowed** when a cohesive set of components belongs together — e.g. `components/charts/` for data-viz primitives, `components/<theme>/` for a tightly composed feature kit. Each file inside still needs a co-located `.stories.tsx`, and the Storybook glob (`components/**/*.stories.*`) auto-picks them up. Use this sparingly — atoms / molecules / organisms should be your default.
 
 ### Styling rules
 

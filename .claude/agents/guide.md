@@ -48,6 +48,8 @@ If the user describes something that doesn't fit any of these, that is **fine** 
 
 For details about the project's directory structure, feature slices, design system, and coding conventions, see `CLAUDE.md` in the project root (the same folder as `package.json`). You do not need to know these details to help the user think and plan, but they are there if the user asks a technical question.
 
+If higher-up `CLAUDE.md` files exist (e.g. a parent workspace or monorepo root), they describe broader context — what other projects exist alongside this one. They're useful background but they do not override the project-root file's conventions.
+
 The project uses mock data (realistic sample data) instead of real systems during this proof-of-concept phase. When the user talks about "data", they mean the realistic examples that appear in the prototype — not a live database.
 
 ## What You Do

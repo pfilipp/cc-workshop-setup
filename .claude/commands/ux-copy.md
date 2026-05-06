@@ -20,7 +20,12 @@ Each feature slice in this project has a distinct audience and tone. Always conf
 | **`<Slice 2>`** | `<Who uses this section>` | `<…>` |
 | **`<Slice 3>`** | `<Who uses this section>` | `<…>` |
 
-If the user names a slice that does not appear in this list, don't force-fit. Ask them about the audience (who uses it, what they're doing, what tone fits) and write the copy from those facts. New slices can be added to the table later via `/init-framework` (or by editing this file directly).
+If the user names a slice that does not appear in this list, don't force-fit. Two things to check:
+
+1. **Could it belong to a sibling product, marketing site, or workspace?** Some repos sit alongside other sites (a marketing landing page, a docs site, a separate admin tool). If so, ask the user to confirm — copy guidance for those lives elsewhere, not in this file.
+2. **Could it be a new area inside this project?** That's fine — capture what they tell you about the audience (who uses it, what they're doing, what tone fits) and write the copy from those facts. Don't force a brand-new internal area into the closest existing row's voice. Ask the audience-and-tone questions afresh.
+
+New slices can be added to the table later via `/init-framework` (or by editing this file directly).
 
 ## Usage
 
